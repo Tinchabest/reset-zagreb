@@ -46,7 +46,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Mirni salon masaže u Zagrebu. Podbrežje V. 32A, 10020 Zagreb. Sve se dogovara na pozivu: 091 753 5101.",
+          "RESET masaža — masaža u Zagrebu (Podbrežje V. 32A, Novi Zagreb). Tretman i trajanje dogovaramo na pozivu. Naručivanje: 091 753 5101.",
       },
     ],
     links: [{ rel: "canonical", href: SITE_URL + "/" }],
