@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, MapPin, Clock, Leaf } from "lucide-react";
 
-import heroAsset from "@/assets/tretman.jpg.asset.json";
-import detailAsset from "@/assets/soba.jpg.asset.json";
+import heroAsset from "@/assets/soba-hero.jpg.asset.json";
+import detailAsset from "@/assets/stolice.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -94,9 +94,9 @@ function Index() {
         <section className="relative flex min-h-[92vh] items-end overflow-hidden">
           <img
             src={heroAsset.url}
-            alt="Terapeut tijekom masaže u salonu RESET u Zagrebu"
-            width={950}
-            height={860}
+            alt="Prostor za masažu u salonu RESET u Zagrebu"
+            width={763}
+            height={918}
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="veil absolute inset-0" />
@@ -178,9 +178,9 @@ function Index() {
           <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-24 lg:grid-cols-2">
             <img
               src={detailAsset.url}
-              alt="Prostor za masažu u salonu RESET, Podbrežje, Zagreb"
-              width={766}
-              height={918}
+              alt="Čekaonica salona RESET s dvije fotelje i stolićem"
+              width={772}
+              height={590}
               loading="lazy"
               className="rounded-sm object-cover shadow-[var(--shadow-soft)]"
             />
