@@ -177,10 +177,10 @@ function Index() {
         <section id="o-nama" className="bg-card">
           <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-24 lg:grid-cols-2">
             <img
-              src={detailImg}
-              alt="Detalji iz salona: vulkansko kamenje, ručnik i zelenilo"
-              width={1200}
-              height={900}
+              src={detailAsset.url}
+              alt="Prostor za masažu u salonu RESET, Podbrežje, Zagreb"
+              width={766}
+              height={918}
               loading="lazy"
               className="rounded-sm object-cover shadow-[var(--shadow-soft)]"
             />
