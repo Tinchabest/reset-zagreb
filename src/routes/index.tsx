@@ -95,9 +95,16 @@ function Index() {
   return (
     <div className="min-h-screen bg-background">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#pocetna" className="font-display text-2xl tracking-[0.3em] text-foreground">
-            RESET
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+          <a href="#pocetna" className="flex items-center gap-3">
+            <img
+              src={logoAsset.url}
+              alt="RESET masaža logo"
+              width={48}
+              height={48}
+              className="h-12 w-12 rounded-full object-cover"
+            />
+            <span className="sr-only">RESET masaža</span>
           </a>
           <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
             <a href="#usluge" className="transition-colors hover:text-foreground">
@@ -110,12 +117,34 @@ function Index() {
               Kontakt
             </a>
           </nav>
-          <a
-            href={PHONE_HREF}
-            className="rounded-sm bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            Naruči se
-          </a>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
+              <a
+                href={FACEBOOK_URL}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook profil RESET masaže"
+                className="text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <FacebookIcon className="h-5 w-5" />
+              </a>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram profil RESET masaže"
+                className="text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <InstagramIcon className="h-5 w-5" />
+              </a>
+            </div>
+            <a
+              href={PHONE_HREF}
+              className="rounded-sm bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Naruči se
+            </a>
+          </div>
         </div>
       </header>
 
