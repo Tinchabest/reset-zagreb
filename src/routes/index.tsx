@@ -93,10 +93,10 @@ function Index() {
         {/* Hero */}
         <section className="relative flex min-h-[92vh] items-end overflow-hidden">
           <img
-            src={heroImg}
-            alt="Prostor za masažu u salonu RESET u Zagrebu"
-            width={1600}
-            height={1104}
+            src={heroAsset.url}
+            alt="Terapeut tijekom masaže u salonu RESET u Zagrebu"
+            width={950}
+            height={860}
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="veil absolute inset-0" />
