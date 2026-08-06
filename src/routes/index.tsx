@@ -94,9 +94,9 @@ function Index() {
         <section className="relative flex min-h-[92vh] items-end overflow-hidden">
           <img
             src={heroAsset.url}
-            alt="Terapeut tijekom masaže u salonu RESET u Zagrebu"
-            width={950}
-            height={860}
+            alt="Prostor za masažu u salonu RESET u Zagrebu"
+            width={763}
+            height={918}
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="veil absolute inset-0" />
