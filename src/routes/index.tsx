@@ -5,91 +5,60 @@ import heroAsset from "@/assets/soba-hero.jpg.asset.json";
 import detailAsset from "@/assets/stolice.jpg.asset.json";
 import logoAsset from "@/assets/logo.png.asset.json";
 
-const FACEBOOK_URL = "https://www.facebook.com/resetmasaza/";
-const INSTAGRAM_URL = "https://www.instagram.com/reset_masaza/";
+const PHONE = "091 753 5101";
+const PHONE_HREF = "tel:+385917535101";
+const MAPS_URL = "https://maps.app.goo.gl/?q=RESET+masa%C5%BEa+Podbre%C5%BEje+V.+32A+Zagreb";
+const SITE_URL = "https://reset-masaza.lovable.app";
 
-function FacebookIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.098 4.388 23.03 10.125 23.927v-6.93H7.078v-2.874h3.047V9.854c0-3.012 1.792-4.68 4.533-4.68 1.313 0 2.686.235 2.686.235v2.953H15.83c-1.49 0-1.955.927-1.955 1.877v2.258h3.328l-.532 2.874h-2.796v6.93C19.612 23.03 24 18.098 24 12.073z" />
-    </svg>
-  );
-}
-
-function InstagramIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.775-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-    </svg>
-  );
-}
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  name: "RESET masaža",
+  description:
+    "Salon masaže u Zagrebu, Podbrežje. Tretman i trajanje dogovaraju se telefonski.",
+  url: SITE_URL,
+  telephone: "+385917535101",
+  image: `${SITE_URL}/favicon.png`,
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Podbrežje V. 32A",
+    postalCode: "10020",
+    addressLocality: "Zagreb",
+    addressCountry: "HR",
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 45.7812923, longitude: 15.959827 },
+  areaServed: "Zagreb",
+  openingHours: "Mo-Sa",
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "RESET masaža — Zagreb, Podbrežje" },
+      { title: "Masaža Zagreb — RESET masaža, Podbrežje" },
       {
         name: "description",
         content:
-          "RESET masaža u Zagrebu (Podbrežje V. 32A). Klasična, sportska, relax i terapeutska masaža. Naručite se na 091 753 5101.",
+          "RESET masaža — masaža u Zagrebu (Podbrežje V. 32A, Novi Zagreb). Tretman i trajanje dogovaramo na pozivu. Naručivanje: 091 753 5101.",
       },
-      { property: "og:title", content: "RESET masaža — Zagreb, Podbrežje" },
+      { name: "keywords", content: "masaža Zagreb, masaža Novi Zagreb, masaža Podbrežje, RESET masaža" },
+      { property: "og:title", content: "Masaža Zagreb — RESET masaža, Podbrežje" },
       {
         property: "og:description",
         content:
-          "Opuštajuće i terapeutske masaže u Zagrebu. Podbrežje V. 32A, 10020 Zagreb. Naručivanje: 091 753 5101.",
+          "Mirni salon masaže u Zagrebu. Podbrežje V. 32A, 10020 Zagreb. Sve se dogovara na pozivu: 091 753 5101.",
+      },
+    ],
+    links: [{ rel: "canonical", href: SITE_URL + "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(localBusinessJsonLd),
       },
     ],
   }),
   component: Index,
 });
-
-const PHONE = "091 753 5101";
-const PHONE_HREF = "tel:+385917535101";
-const MAPS_URL = "https://maps.app.goo.gl/?q=RESET+masa%C5%BEa+Podbre%C5%BEje+V.+32A+Zagreb";
-
-const usluge = [
-  {
-    naziv: "Klasična masaža",
-    opis: "Masaža cijelog tijela ili pojedinih regija koja opušta mišiće i potiče cirkulaciju.",
-    trajanje: "30 / 60 min",
-  },
-  {
-    naziv: "Sportska masaža",
-    opis: "Intenzivnija tehnika za brži oporavak nakon treninga i pripremu mišića za napor.",
-    trajanje: "45 / 60 min",
-  },
-  {
-    naziv: "Relax masaža",
-    opis: "Nježni, ujednačeni pokreti uz eterična ulja — za smirivanje tijela i uma.",
-    trajanje: "60 / 90 min",
-  },
-  {
-    naziv: "Terapeutska masaža",
-    opis: "Rad na bolnim točkama, ukočenom vratu, ramenima i leđima nakon dugog sjedenja.",
-    trajanje: "30 / 60 min",
-  },
-  {
-    naziv: "Masaža leđa i vrata",
-    opis: "Kratki tretman fokusiran na najopterećenije područje — idealan u pauzi dana.",
-    trajanje: "30 min",
-  },
-  {
-    naziv: "Anticelulitna masaža",
-    opis: "Snažnija tehnika za poticanje limfotoka i tonusa kože, najbolja u serijama.",
-    trajanje: "45 min",
-  },
-];
 
 function Index() {
   return (
@@ -117,34 +86,12 @@ function Index() {
               Kontakt
             </a>
           </nav>
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-3">
-              <a
-                href={FACEBOOK_URL}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Facebook profil RESET masaže"
-                className="text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <FacebookIcon className="h-5 w-5" />
-              </a>
-              <a
-                href={INSTAGRAM_URL}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram profil RESET masaže"
-                className="text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <InstagramIcon className="h-5 w-5" />
-              </a>
-            </div>
-            <a
-              href={PHONE_HREF}
-              className="rounded-sm bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Naruči se
-            </a>
-          </div>
+          <a
+            href={PHONE_HREF}
+            className="rounded-sm bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            Naruči se
+          </a>
         </div>
       </header>
 
@@ -162,7 +109,7 @@ function Index() {
           <div className="relative mx-auto w-full max-w-6xl px-6 pb-20 pt-32">
             <p className="eyebrow text-secondary/90">Masaža · Zagreb · Podbrežje</p>
             <h1 className="mt-5 max-w-3xl text-5xl leading-[1.05] text-secondary md:text-7xl">
-              Trenutak mira za vaše tijelo
+              Masaža u Zagrebu — trenutak mira za vaše tijelo
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-secondary/85">
               RESET je mali, tihi salon masaže u Zagrebu. Bez žurbe, bez gužve — samo vi,
@@ -179,7 +126,7 @@ function Index() {
                 href="#usluge"
                 className="inline-flex items-center rounded-sm border border-secondary/50 px-7 py-3.5 text-sm font-medium text-secondary transition-colors hover:bg-secondary/10"
               >
-                Pogledaj usluge
+                Kako se naručiti
               </a>
             </div>
           </div>
@@ -204,32 +151,47 @@ function Index() {
           </div>
         </section>
 
-        {/* Usluge */}
+        {/* Usluge / dogovor */}
         <section id="usluge" className="mx-auto max-w-6xl px-6 py-24">
           <p className="eyebrow">Usluge</p>
           <h2 className="mt-4 max-w-2xl text-4xl md:text-5xl">
-            Tretmani prilagođeni vašem tijelu
+            Tretman dogovaramo na pozivu
           </h2>
-          <p className="mt-4 max-w-xl text-muted-foreground">
-            Svaki tretman počinje kratkim razgovorom kako bismo odredili intenzitet i
-            područja na kojima ćemo raditi.
+          <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
+            Ne nudimo unaprijed zadane pakete. Kod nas se svaki tretman, njegovo trajanje i
+            cijena dogovaraju u kratkom telefonskom razgovoru — tako da dobijete točno ono
+            što vaše tijelo treba.
           </p>
 
-          <div className="mt-14 grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-            {usluge.map((u) => (
-              <article key={u.naziv} className="bg-card p-8">
+          <div className="mt-14 grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-3">
+            {[
+              {
+                t: "1 · Nazovite",
+                d: "Javite se na 091 753 5101 i recite što vas muči ili što biste željeli.",
+              },
+              {
+                t: "2 · Dogovorimo",
+                d: "Zajedno biramo vrstu masaže, trajanje i termin koji vam odgovara.",
+              },
+              {
+                t: "3 · Dođete na RESET",
+                d: "Podbrežje V. 32A, Zagreb — mirno mjesto samo za vas u tom terminu.",
+              },
+            ].map((s) => (
+              <article key={s.t} className="bg-card p-8">
                 <Leaf className="h-5 w-5 text-accent" />
-                <h3 className="mt-5 text-2xl">{u.naziv}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{u.opis}</p>
-                <p className="mt-6 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                  {u.trajanje}
-                </p>
+                <h3 className="mt-5 text-2xl">{s.t}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
               </article>
             ))}
           </div>
-          <p className="mt-8 text-sm text-muted-foreground">
-            Cijene i točno trajanje dogovaramo telefonski, ovisno o odabranom tretmanu.
-          </p>
+
+          <a
+            href={PHONE_HREF}
+            className="mt-10 inline-flex items-center gap-2 rounded-sm bg-accent px-7 py-3.5 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90"
+          >
+            <Phone className="h-4 w-4" /> Nazovite {PHONE}
+          </a>
         </section>
 
         {/* O nama */}
