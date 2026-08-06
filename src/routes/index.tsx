@@ -178,9 +178,9 @@ function Index() {
           <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-24 lg:grid-cols-2">
             <img
               src={detailAsset.url}
-              alt="Prostor za masažu u salonu RESET, Podbrežje, Zagreb"
-              width={766}
-              height={918}
+              alt="Čekaonica salona RESET s dvije fotelje i stolićem"
+              width={772}
+              height={590}
               loading="lazy"
               className="rounded-sm object-cover shadow-[var(--shadow-soft)]"
             />
