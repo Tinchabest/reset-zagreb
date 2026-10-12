@@ -10,6 +10,27 @@ const PHONE = "091 753 5101";
 const PHONE_HREF = "tel:+385917535101";
 const MAPS_URL = "https://maps.app.goo.gl/?q=RESET+masa%C5%BEa+Podbre%C5%BEje+V.+32A+Zagreb";
 const SITE_URL = "https://reset-masaza.lovable.app";
+const INSTAGRAM_URL = "https://www.instagram.com/reset_masaza/";
+const INSTAGRAM_HANDLE = "@reset_masaza";
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" />
+      <circle cx="12" cy="12" r="4.2" />
+      <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
 
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
@@ -87,12 +108,23 @@ function Index() {
               Kontakt
             </a>
           </nav>
-          <a
-            href={PHONE_HREF}
-            className="rounded-sm bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            Naruči se
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="RESET masaža na Instagramu"
+              className="rounded-sm border border-border/60 p-2 text-muted-foreground transition-colors hover:border-accent/60 hover:text-accent"
+            >
+              <InstagramIcon className="h-4 w-4" />
+            </a>
+            <a
+              href={PHONE_HREF}
+              className="rounded-sm bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Naruči se
+            </a>
+          </div>
         </div>
       </header>
 
@@ -274,6 +306,18 @@ function Index() {
                     </span>
                   </span>
                 </div>
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-start gap-4 group"
+                >
+                  <InstagramIcon className="mt-1.5 h-5 w-5 text-accent" />
+                  <span>
+                    <span className="block text-xl group-hover:underline">Instagram</span>
+                    <span className="text-sm text-muted-foreground">{INSTAGRAM_HANDLE}</span>
+                  </span>
+                </a>
               </div>
             </div>
             <div className="overflow-hidden rounded-sm border border-border">
@@ -295,9 +339,14 @@ function Index() {
           <p className="text-sm text-muted-foreground">
             Podbrežje V. 32A, 10020 Zagreb · {PHONE}
           </p>
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} RESET masaža
-          </p>
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-accent"
+          >
+            <InstagramIcon className="h-4 w-4" /> {INSTAGRAM_HANDLE}
+          </a>
         </div>
       </footer>
     </div>
