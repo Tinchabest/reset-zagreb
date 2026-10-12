@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, MapPin, Clock, Leaf } from "lucide-react";
 
-import heroAsset from "@/assets/soba-hero.jpg.asset.json";
-import detailAsset from "@/assets/stolice.jpg.asset.json";
-import logoAsset from "@/assets/logo.png.asset.json";
+// Images are served from /public so they work on any host (not only Lovable).
+const heroAsset = { url: "/images/soba-hero.jpg" };
+const detailAsset = { url: "/images/stolice.jpg" };
+const logoAsset = { url: "/images/logo.png" };
 
 const PHONE = "091 753 5101";
 const PHONE_HREF = "tel:+385917535101";
